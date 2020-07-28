@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+目前支持的GM命令如下：
+		
+	modify_money pstid type money 
+		//pstid，用户id，该用户必须在线，
+		//type   1-钻石，2-点券，3-gb  
+		//money  修改数目，可正可负
+		
+		示例：modify_money 30021425141 1 20  //给30021425141增加20个钻石
+								 
+	
+	
+-->
+<PressTestConfig>
+	<SDKServer sdk_server_ip="192.168.0.219" sdk_server_port="32011" />	
+</PressTestConfig>

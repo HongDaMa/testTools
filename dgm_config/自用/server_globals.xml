@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Globals>
+		<!-- 服务启动配置 -->
+	<svc_config>
+	  	<svc ip="172.17.100.131" type="lobby" id="1" />
+	  	<svc ip="172.17.100.131" type="lobby" id="2" />
+		<svc ip="172.17.100.131" type="lobby" id="201" />
+		<svc ip="172.17.100.131" type="lobby" id="301" />
+		<svc ip="172.17.100.131" type="lobby" id="401" />
+	  	<svc ip="172.17.100.131" type="gateway" />
+	  	<svc ip="172.17.100.131" type="match" id="1" />
+	  	<svc ip="172.17.100.131" type="zone" id="1" />
+	  	<svc ip="172.17.100.131" type="zone" id="2" />
+	  	<svc ip="172.17.100.131" type="queue" id="1" />
+		<svc ip="172.17.100.131" type="queue" id="2" />
+	  	<svc ip="172.17.100.131" type="transmit" id="1" />
+		<svc ip="172.17.100.131" type="third" id="1" />
+	  	<svc ip="172.17.100.131" type="db" id="1" />
+	  	<svc ip="172.17.100.131" type="unique" id="1" />
+	  	<svc ip="172.17.100.131" type="card" id="1" />
+	  	<svc ip="172.17.100.131" type="card" id="2" />
+	  	<svc ip="172.17.100.131" type="gm_proxy" id="1" />
+	  	<svc ip="172.17.100.131" type="rank" id="1" />
+	  	<svc ip="172.17.100.131" type="guild" id="1" />
+	  	<svc ip="172.17.100.131" type="team" id="1" />
+		<svc ip="172.17.100.131" type="global_proxy" id="1" />
+		<svc ip="172.17.100.131" type="garden" id="1" />
+		<svc ip="172.17.100.131" type="vedio" id="1" />
+		<svc ip="172.17.100.131" type="authority" id="1" />
+		<svc ip="172.17.100.131" type="lbs" id="1" />
+		<svc ip="172.17.100.131" type="web_service" id="1" />
+		<svc ip="172.17.100.131" type="community_unique" id="1" />
+		<svc ip="172.17.100.131" type="marriage" id="1" />
+	</svc_config>
+		
+	<GatewayOutter>
+		<!-- 		
+      	配置gateway外网ip 没有该项配置时自动读取第一个外网ip type 0:双线通用的ip/域名 1:电信ip/域名 2:网通ip/域名
+      	该配置不影响监听绑定的ip，只影响version下发gateway ip时的ip选择
+      	
+      	移动端专用的gateway 不对外开放ip 关闭QQ验证 反外挂和校验 ID从101开始
+		<OUTTER_IP>
+			<ip type="0" value="192.168.0.105" />
+			<ip type="1" value="192.168.0.105" />
+			<ip type="2" value="192.168.0.105" />
+      	</OUTTER_IP>
+		 -->
+	</GatewayOutter>
+	
+	<Gateway>
+      <Server ID="1" INNER_IP="127.0.0.1" OUTTER_PORT="32016" INNER_PORT="32017"/>
+   </Gateway>
+   
+	<Transmit>
+		<Server ID="1" INNER_IP="127.0.0.1"	OUTTER_PORT="0" INNER_PORT="32018"/>
+	</Transmit>
+	
+	<Version>
+		<Server ID="1" INNER_IP=""	OUTTER_PORT="32010" INNER_PORT="0" >
+      	<!-- 
+      	配置version外网ip version不是双网ip时不需要配置 1:电信ip 2:网通ip
+      	该配置不影响监听绑定的ip，只影响对接入用户的线路判断
+      	<OUTTER_IP>
+					<ip type="1" value="127.0.0.1" />
+					<ip type="2" value="192.168.2.15" />
+      	</OUTTER_IP>
+      	-->
+		</Server>
+	</Version>
+	
+	<Gm_Proxy>
+		<Server ID="1" INNER_IP=""	OUTTER_PORT="32011" INNER_PORT="0" />
+		<Server ID="2" INNER_IP=""	OUTTER_PORT="32013" INNER_PORT="0" />
+		<!-- 
+      	配置Gm_Proxy外网ip Gm_Proxy不是双网ip时不需要配置 1:电信ip 2:网通ip
+      	该配置不影响监听绑定的ip，只影响对接入用户的线路判断
+      	<OUTTER_IP>
+					<ip type="1" value="127.0.0.1" />
+					<ip type="2" value="192.168.2.15" />
+      	</OUTTER_IP>
+      	-->
+	</Gm_Proxy>
+    <Vedio>
+        <Server ID="1" INNER_IP=""	OUTTER_PORT="32012" INNER_PORT="0" >
+            <!-- 
+            配置Vedio外网ip Vedio不是双网ip时不需要配置 1:电信ip 2:网通ip
+            该配置不影响监听绑定的ip，只影响对接入用户的线路判断
+            -->
+            <OUTTER_IP>
+                        <ip type="1" value="127.0.0.1" />
+            </OUTTER_IP>
+        </Server>
+    </Vedio>
+	<mysql_config>
+			<Server ID="1" ip="172.17.100.130" port="3306" user="root" pwd="111111"  database="dgm_mhd" connum="16" one_table_in_thread_count="2"/>
+	</mysql_config>
+	
+	<!--
+	zone_id [1-255] 每个大区不可重复 用于id分配
+	-->
+  <zone_id>75</zone_id>
+	
+	<!--zone_type  大区类型，取值[1-4] 对应resources/config/server/tencent/zone_appid_map.xml 中的四种zone类型-->
+	<zone_type>1</zone_type>
+	
+</Globals>

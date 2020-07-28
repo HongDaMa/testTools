@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Globals>
+	<!-- 服务启动配置 -->
+	<svc_config>
+	  	<svc ip="172.17.100.131" type="global_coord" />
+	  	<svc ip="172.17.100.131" type="global_version" id="1" />
+		<svc ip="172.17.100.131" type="global_db" id="1" />
+		
+		<svc ip="172.17.100.131" type="global_gateway" />
+		<svc ip="172.17.100.131" type="global_transmit" />
+		
+	  	<svc ip="172.17.100.131" type="global_lobby" id="1" />
+	  	<svc ip="172.17.100.131" type="global_match" id="1" />
+	  	<svc ip="172.17.100.131" type="global_idip" id="1" />
+	  	<svc ip="172.17.100.131" type="global_idip" id="2" />
+	  	<svc ip="172.17.100.131" type="global_idip" id="3" />
+		<svc ip="172.17.100.131" type="global_idip" id="4" />
+		<svc ip="172.17.100.131" type="global_third" id="1"/>
+	</svc_config>
+	
+	<GatewayOutter>
+		<!-- 		
+      	配置gateway外网ip 没有该项配置时自动读取第一个外网ip type 0:双线通用的ip/域名 1:电信ip/域名 2:网通ip/域名
+      	该配置不影响监听绑定的ip，只影响version下发gateway ip时的ip选择
+      	
+      	移动端专用的gateway 不对外开放ip 关闭QQ验证 反外挂和校验 <OUTTER_IP>
+			<ip type="0" value="192.168.0.105" />
+			<ip type="1" value="192.168.0.105" />
+			<ip type="2" value="192.168.0.105" />
+      	</OUTTER_IP>
+		 -->
+	</GatewayOutter>
+	
+	<Gateway>
+      <Server ID="1" INNER_IP="127.0.0.1" OUTTER_PORT="30516" INNER_PORT="30517" />
+      <Server ID="2" INNER_IP="127.0.0.1" OUTTER_PORT="30516" INNER_PORT="30517" /> 
+   </Gateway>
+		
+	<Transmit>
+		<Server ID="1" INNER_IP="127.0.0.1"	OUTTER_PORT="0" INNER_PORT="30518"/>
+	</Transmit>	
+
+	<VersionServer>
+		<Server ID="1" INNER_IP="127.0.0.1"	OUTTER_PORT="33018" INNER_PORT=""/>
+	</VersionServer>
+
+    <IDIP>
+		<Server ID="1" INNER_IP="127.0.0.1"	OUTTER_PORT="32331" INNER_PORT=""/>
+        <Server ID="2" INNER_IP="127.0.0.1"	OUTTER_PORT="32332" INNER_PORT=""/>
+        <Server ID="3" INNER_IP="127.0.0.1"	OUTTER_PORT="32333" INNER_PORT=""/>
+        <Server ID="4" INNER_IP="127.0.0.1"	OUTTER_PORT="32334" INNER_PORT=""/>
+	</IDIP>	
+
+	<mysql_config>
+		<Server ID="1" ip="172.17.100.130" port="3306" user="root" pwd="111111"  database="dgm_global_mhd" connum="16" one_table_in_thread_count="2"/>
+	</mysql_config>
+	
+	<MusicWebServer>
+		<Server ID="1" INNER_IP="127.0.0.1"	OUTTER_PORT="32401" INNER_PORT=""/>
+	</MusicWebServer>
+
+	<!-- debug下，ip读取的是ip_d,以和测试分离环境避免污染。更完善的做法之后再补齐 -->
+	<RedisServer>
+		<Server ID="1" ip="172.17.100.130" ip_d="172.17.100.129" port="50000" pass="qp@2015"/>
+		<!-- 第二个redis为端游好友专用redis -->
+		<Server ID="2" ip="172.17.100.130" ip_d="172.17.100.129" port="50000" pass="qp@2015"/>
+		<!-- 第三个redis为旅行照片更新老数据专用redis -->
+		<Server ID="3" ip="172.17.100.130" ip_d="172.17.100.129" port="50000" pass="qp@2015"/>
+	</RedisServer>
+	
+	
+
+</Globals>

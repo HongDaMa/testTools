@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Regions>
+  <!--
+    platform 0 ~ iOS, 1 ~android, 2 ~ PC
+    source  0 ~ PC, 1 ~ WX, 2 ~ QQ
+	is_open true可以注册，false不可以注册
+    -->
+  
+  <AppleVerify CLIENT_VERSION = "">
+		<ForceVerifyOpenIdList>
+			<OpenId openid="123" />
+		</ForceVerifyOpenIdList>
+		<Server id="99" name="马洪达" zone_id="75" is_open="true">
+			<Gateway ip="apple.x5m.qq.com" port="40081"/>
+		</Server>
+		
+		<App Version="1.11.0"
+		     all_url="https://x5m.game.qq.com/guildhelper/h5/jump_to_qqx5.html"
+		     all_size="1"
+		     all_md5="8d936b317a0a12c7ee4c5f6f7a62fdc4"
+			 dyn_res_url="https://www.h3d.com.cn/dgm/version_test/dynamic/1.11.0/android/"
+		     dyn_res_major_version="1"
+		     dyn_res_minor_version="0"
+		     dyn_res_list_size="117638"
+		     target_res="10.0"/>
+			 
+	  <Resource Version="10.0"
+			  min_increase_ver="10.0"
+			  increase_url="http://dldir1.qq.com/qqxwsy/xw/resources/android/10.0/update/describe.xml"
+			  increase_size="415931"
+			  increase_md5="75fad4d166d4021eca5cbc54ee38187c"
+			  all_url="http://dldir1.qq.com/qqxwsy/xw/resources/android/10.0/full/describe.xml"
+			  all_version="10.0"
+			  all_size="642749058"
+			  all_md5="b126cbe3e6f9d9f13ff8d502a39aecc5" />
+
+  </AppleVerify>
+</Regions>

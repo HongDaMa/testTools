@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Regions>
+
+<!--
+    platform 0 ~ iOS, 1 ~android, 2 ~ PC
+    source  0 ~ PC, 1 ~ WX, 2 ~ QQ
+	is_open true可以注册，false不可以注册
+	is_gray true是灰度服，false不是灰度服
+    -->
+   <Platform platform="0" name="iq">
+	<Server id="1" name="131" zone_id="131" is_open="true"/>
+	<Server id="2" name="iq_local" zone_id="1" is_open="true"/>
+	<Server id="3" name="马洪达" zone_id="75" is_open="true"/>
+  </Platform>
+  
+  <Platform platform="1" name="aq">
+	<Server id="1" name="131" zone_id="131" is_open="true"/>
+	<Server id="2" name="aq_local" zone_id="1" is_open="true" is_gray="false"/>
+	<Server id="3" name="马洪达" zone_id="75" is_open="true"/>
+  </Platform>  
+  
+</Regions>

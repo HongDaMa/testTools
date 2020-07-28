@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Regions>
+  <!--
+    platform 0 ~ iOS, 1 ~android, 2 ~ PC
+    source  0 ~ PC, 1 ~ WX, 2 ~ QQ
+	is_open true可以注册，false不可以注册
+    -->
+  <Platform id="1" platform="0" source="1" name="iv">
+    <Server id="1" name="131" zone_id="131" is_open="true"/>
+	<Server id="2" name="local" zone_id="1" is_open="true" is_gray="false"/>
+	<Server id="3" name="测试私服" zone_id="100" is_open="true"/>
+  </Platform>
+  <Platform id="2" platform="1" source="1"  name="av">
+	<Server id="1" name="131" zone_id="131" is_open="true"/>
+	<Server id="2" name="local" zone_id="1" is_open="true" is_gray="false"/>
+	<Server id="3" name="测试私服" zone_id="100" is_open="true"/>
+  </Platform>
+</Regions>
